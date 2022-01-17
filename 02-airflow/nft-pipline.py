@@ -33,6 +33,7 @@ with DAG(dag_id='nft-pipeline',
          default_args=default_args,
          # 찾기 쉽도록 tag 사용
          tags=['nft'],
+         # dag를 멈췄다가 다시돌리면 catchup이 false일 경우 당일 날짜의 dag만 돌리고, true로 하면 start_date 이후 멈춘날 부터 당일날 까지의 dag를 돌리게 됨 
          catchup=False) as dag:
     
     #테이블을 만드는 task
